@@ -3,8 +3,19 @@ import Project1 from "../assets/img/project/pro1.png";
 import Project2 from "../assets/img/project/grahasta.png";
 import Project3 from "../assets/img/project/netflix.png";
 
-import Award1 from "../assets/img/project/magang.jpeg";
-import Award2 from "../assets/img/project/abdidaya.jpeg";
+// lomba IOT Faramadina Jakarta 
+import SertifLomba1 from "../assets/img/lomba/Sertif-IOT.jpg"
+import DokumLomba1 from "../assets/img/lomba/Dokum-IOT.jpg"
+// lomba Invention Udayana
+import SertifLomba2 from "../assets/img/lomba/Sertif-Invention.jpg"
+
+// Magang
+import SertifMagang from "../assets/img/magang/magang.jpeg"
+
+// Activity Mentoring
+import Mentoring from "../assets/img/activity/Mentoring.png"
+import Abdidaya from "../assets/img/activity/Abdidaya.jpeg"
+
 export const navLinks = [
     {id: 1, path: "/", text: "Home"},
     {id: 2, path: "/Project", text: "Project"},
@@ -42,38 +53,70 @@ export const projects = [
 export const achievements = [
  {
     id: 1,
-    year: "2026",
+    year: "2022",
     category: "lomba",
-    title: "Best UI/UX Design - Harvest HUB Project",
-    rank: "Finalist / Best Design",
-    institution: "Design-Oriented Human-Computer Interaction Exhibition",
-    desc: "Berhasil meraih penghargaan desain antarmuka terbaik dalam pengembangan platform integrasi pertanian dan peternakan dengan pendekatan User-Centered Design.",
+    title: "Best UI/UX Design - DAMEKO Project",
+    rank: "Finalis / Best Design",
+    institution: "Invention Udayana",
+    desc: "Dameko merupakan salah satu platform yang berkontribusi dalam mewujudkan tujuan pembangunan berkelanjutan (Sustunaible Development Goals atau SDGs).",
     icon: "bi bi-trophy-fill",
     images: [
-      { id: 101, url: Award1, alt: "Harvest HUB Showcase" }
+      { url: SertifLomba2, alt: "Sertifikat Magang Vinix"}
     ]
   },
   {
     id: 2,
-    year: "2026",
-    category: "activity",
-    title: "Semantic Web Innovation Project - Ceraken",
-    rank: "Core Developer",
-    institution: "Udayana University",
-    desc: "Mengembangkan inovasi arsitektur digital 'Ceraken' menggunakan teknologi Semantic Web ontologies (RDF, OWL, SPARQL) untuk manajemen arsip budaya Bali.",
-    icon: "bi bi-cpu-fill",
-    images: []
+    year: "2024",
+    category: "lomba",
+    title: "Juara 3 - Automatic Watering System",
+    rank: "Juara 3",
+    institution: "Universitas Paramadina Jakarta",
+    desc: "Sistem penyiraman otomatis berbasis IOT untuk menentukan kesuburan tanah",
+    icon: "bi bi-trophy-fill",
+    images: [
+      { url: SertifLomba1, alt: "Sertifikat Lomba IOT"},
+      { url: DokumLomba1, alt: "Dokum Lomba IOT"}
+    ]
   },
+  
   {
     id: 3,
+    year: "2024",
+    category: "activity",
+    title: "Generation Girl Goed to High School",
+    rank: "Mentor",
+    institution: "Generation Girl Bali",
+    desc: "Pelatihan pembuatan website portofolio bagi siswa-siswi SMAN 1 Mengwi",
+    icon: "bi bi-cpu-fill",
+    images: [
+      { url: Mentoring, alt: "SMA 1 MENGWI"}
+    ]
+  },
+  {
+    id: 4,
+    year: "2025",
+    category: "activity",
+    title: "Abdidaya Ormawa",
+    rank: "Tim Web",
+    institution: "Universitas Udayana",
+    desc: "Membuat website yang digunakan sebagai sumber informasi untuk acara abdidaya ormawa di universitas udayana",
+    icon: "bi bi-cpu-fill",
+    images: [
+      { url: Abdidaya, alt: "Abdidaya"}
+    ]
+  },
+  {
+    id: 5,
     year: "2025",
     category: "magang",
-    title: "Frontend Developer Intern",
+    title: "Science data",
     rank: "Internship",
-    institution: "Tech Company / Studio",
-    desc: "Membangun komponen antarmuka web yang responsif menggunakan React dan Tailwind CSS, serta mengintegrasikan API eksternal untuk optimasi performa.",
+    institution: "Vinix7",
+    desc: "Analisis data terkait IUP (International Undergraduate Program) di perguruan tinggi",
     icon: "bi bi-briefcase-fill",
-    images: []
+    images: [ 
+       { url: SertifMagang, alt: "Sertif Magang"}
+    ]
   }
 ];
 export const skillCategories = [
