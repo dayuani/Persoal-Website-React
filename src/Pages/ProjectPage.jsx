@@ -9,7 +9,7 @@ const ProjectPage = () => {
         {/* Header Bagian Proyek */}
         <div className="project-header text-center mb-5">
           <h2 className="section-title">My <span className="text-accent">Projects</span></h2>
-          <p>Kumpulan karya dan proyek yang telah saya kembangkan dengan dedikasi penuh.</p>
+          <p>A showcase of my projects, crafted with precision and deep dedication</p>
         </div>
 
         {/* Bagian Grid Cards */}

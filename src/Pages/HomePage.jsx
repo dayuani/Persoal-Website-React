@@ -21,7 +21,7 @@ const HomePage = () => {
           {/* KOLOM KIRI: Teks Perkenalan */}
           <Col lg={7} md={12} className="home-intro text-center text-lg-start mb-5 mb-lg-0">
             <div className="badge-welcome mb-3">
-              <span className="dot"></span> Halo, Saya
+              <span className="dot"></span> Haii, I'm
             </div>
             
             <h1 className="hero-name">
@@ -29,38 +29,44 @@ const HomePage = () => {
             </h1>
             
             <div className="job-title-wrapper">
-              <h2 className="job-title">Frontend Developer</h2>
-              <span className="separator">|</span>
-              <h2 className="job-title-sub">React Specialist</h2>
+              <h2 className="job-title">I want to become a Frontend Developer.</h2>
+              <span className="separator"></span>
+              {/* <h2 className="job-title-sub">React Specialist</h2> */}
             </div>
             
             <p className="hero-description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor natus minima repellendus alias ratione obcaecati commodi veniam ad incidunt nemo!
+             "Hi! I'm Dayuani, an Informatics student at Udayana University. I am an adaptive learner who is always enthusiastic about exploring the world of web development. For me, every line of code is an opportunity to learn and grow. Welcome to my growth space!"
             </p>
             
             {/* Tombol Aksi */}
             <div className="d-flex gap-3 justify-content-center justify-content-lg-start pt-2">
-              <Button as={Link} to="/projects" className="btn-custom-connect btn-lg-premium">
-                Lihat Project Saya <i className="bi bi-arrow-right ms-2"></i>
+              <Button as={Link} to="/project" className="btn-custom-connect btn-lg-premium">
+                My Project <i className="bi bi-arrow-right ms-2"></i>
               </Button>
               
-              <Button as={Link} to="/about" className="btn-outline-custom btn-lg-premium">
-                Tentang Saya
-              </Button>
+              {/* <Button 
+                as="a" 
+                href="mailto:dy.santiani@gmail.com" 
+                className="btn-outline-custom btn-lg-premium"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Contact Me
+              </Button> */}
             </div>
 
             {/* --- TAMBAHAN BARU: Ikon Media Sosial di Bawah Tombol --- */}
             <div className="hero-socials d-flex gap-3 justify-content-center justify-content-lg-start mt-4 pt-2">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="social-link-item" title="GitHub">
+              <a href="https://github.com/dayuani" target="_blank" rel="noreferrer" className="social-link-item" title="GitHub">
                 <i className="bi bi-github"></i>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-link-item" title="Instagram">
+              <a href="https://www.instagram.com/dayusantiani._" target="_blank" rel="noreferrer" className="social-link-item" title="Instagram">
                 <i className="bi bi-instagram"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link-item" title="LinkedIn">
+              {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link-item" title="LinkedIn">
                 <i className="bi bi-linkedin"></i>
-              </a>
-              <a href="mailto:emailmu@domain.com" className="social-link-item" title="Email">
+              </a> */}
+              <a href="mailto:dy.santiani@gmail.com" className="social-link-item" title="Email" target="_blank" rel="noreferrer">
                 <i className="bi bi-envelope-fill"></i>
               </a>
             </div>
@@ -87,7 +93,7 @@ const HomePage = () => {
         <div className="skills-header text-center mb-5">
           <h2 className="section-title">My <span className="text-accent">Skills</span></h2>
           <p className="section-subtitle">
-            Teknologi, framework, dan perangkat desain yang saya kuasai untuk membangun solusi digital yang optimal.
+            Technologies, frameworks, and design tools in my repertoire.
           </p>
         </div>
 
@@ -121,80 +127,83 @@ const HomePage = () => {
     </section>
 
      <section className="contact-section position-relative">
-        {/* Efek Lampu Latar Belakang */}
-        <div className="bg-glow-dekorasi contact-glow"></div>
+  {/* Efek Lampu Latar Belakang */}
+  <div className="bg-glow-dekorasi contact-glow"></div>
 
-        <Container className="position-relative z-2">
-          <Row className="justify-content-center">
-            <Col lg={8} md={10}>
-              
-              {/* Header Section */}
-              <div className="contact-header text-center mb-5">
-                <h2 className="section-title">Get In <span className="text-accent">Touch</span></h2>
-                <p className="section-subtitle">
-                  Ingin berdiskusi tentang proyek, kolaborasi, atau sekadar menyapa? 
-                  Silakan isi formulir di bawah ini.
-                </p>
-              </div>
+  <Container className="position-relative z-2">
+    <Row className="justify-content-center">
+      <Col lg={8} md={10}>
+        
+        {/* Header Section */}
+        <div className="contact-header text-center mb-5">
+          <h2 className="section-title">Get In <span className="text-accent">Touch</span></h2>
+          <p className="section-subtitle">
+            Want to discuss a project, collaborate, or just say hi? Please fill out the form below.
+          </p>
+        </div>
 
-              {/* Desain Baru Form Card Premium */}
-              <div className="contact-card-wrapper">
-                <Form className="premium-form">
-                  <Row>
-                    {/* Input Nama */}
-                    <Col md={6} className="mb-4">
-                      <Form.Group controlId="formNama">
-                        <Form.Label className="custom-label">Nama Lengkap</Form.Label>
-                        <Form.Control 
-                          type="text" 
-                          placeholder="Masukkan nama Anda" 
-                          className="custom-input"
-                          required 
-                        />
-                      </Form.Group>
-                    </Col>
+        {/* Desain Baru Form Card Premium */}
+        <div className="contact-card-wrapper">
+          {/* GANTI: Tambahkan action dengan URL Formspree kamu dan method="POST" */}
+          <Form className="premium-form" action="https://formspree.io/f/xjgzyvjv" method="POST">
+            <Row>
+              {/* Input Nama */}
+              <Col md={6} className="mb-4">
+                <Form.Group controlId="formNama">
+                  <Form.Label className="custom-label">Full Name</Form.Label>
+                  <Form.Control 
+                    type="text" 
+                    name="name" // WAJIB ADA untuk Formspree
+                    placeholder="Full Name" 
+                    className="custom-input"
+                    required 
+                  />
+                </Form.Group>
+              </Col>
 
-                    {/* Input Email */}
-                    <Col md={6} className="mb-4">
-                      <Form.Group controlId="formEmail">
-                        <Form.Label className="custom-label">Alamat E-mail</Form.Label>
-                        <Form.Control 
-                          type="email" 
-                          placeholder="nama@email.com" 
-                          className="custom-input"
-                          required 
-                        />
-                      </Form.Group>
-                    </Col>
+              {/* Input Email */}
+              <Col md={6} className="mb-4">
+                <Form.Group controlId="formEmail">
+                  <Form.Label className="custom-label">E-mail</Form.Label>
+                  <Form.Control 
+                    type="email" 
+                    name="email" // WAJIB ADA untuk Formspree
+                    placeholder="name@email.com" 
+                    className="custom-input"
+                    required 
+                  />
+                </Form.Group>
+              </Col>
 
-                    {/* Input Pesan */}
-                    <Col md={12} className="mb-4">
-                      <Form.Group controlId="formPesan">
-                        <Form.Label className="custom-label">Pesan Anda</Form.Label>
-                        <Form.Control 
-                          as="textarea" 
-                          rows={5} 
-                          placeholder="Tuliskan pesan atau penawaran kerja sama Anda di sini..." 
-                          className="custom-input"
-                          required 
-                        />
-                      </Form.Group>
-                    </Col>
-                  </Row>
+              {/* Input Pesan */}
+              <Col md={12} className="mb-4">
+                <Form.Group controlId="formPesan">
+                  <Form.Label className="custom-label">Massage</Form.Label>
+                  <Form.Control 
+                    as="textarea" 
+                    rows={5} 
+                    name="message" // WAJIB ADA untuk Formspree
+                    placeholder="Write your message or collaboration proposal here..." 
+                    className="custom-input"
+                    required 
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-                  {/* Tombol Kirim Premium */}
-                  <div className="text-center pt-2">
-                    <Button type="submit" className="btn-custom-connect btn-lg-premium w-100 w-md-auto px-5">
-                      Kirim Pesan <i className="bi bi-send-fill ms-2"></i>
-                    </Button>
-                  </div>
-                </Form>
-              </div>
+            {/* Tombol Kirim Premium */}
+            <div className="text-center pt-2">
+              <Button type="submit" className="btn-custom-connect btn-lg-premium w-100 w-md-auto px-5">
+                Send <i className="bi bi-send-fill ms-2"></i>
+              </Button>
+            </div>
+          </Form>
+        </div>
 
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      </Col>
+    </Row>
+  </Container>
+</section>
     </div>
 
   )

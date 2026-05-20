@@ -29,26 +29,43 @@ export const projects = [
         id: 1,
         image: Project1,
         title: "Website Bali Tour",
-        desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sed.",
+        desc : "A digital platform for travel agencies that beautifully presents tourist destinations and simplifies the process for users to plan and book their vacations online.",
         tech : ["React", "Bootstrap"], // Menggunakan Array
         link : "https://travel-webbali.netlify.app/" // Link tujuan proyek
     },
     {
         id: 2,
         image: Project3,
-        title: "",
-        desc : "Platform integrasi pertanian dan peternakan dengan layanan konsultasi.",
+        title: "Netflix Content Analysis",
+        desc : "Application of clustering-based data analysis techniques to categorize the characteristics of Netflix content.",
         tech : ["Python", "Streamlit"], 
-        link : "https://github.com/dayuani/harvest-hub"
+        link : "https://github.com/dayuani/Analisis-Konten-Netflix-dengan-Clustering"
     },
     {
         id: 4,
         image: Project2,
         title: "Grahasta Wedding Invitation",
         desc : "Website undangan digital elegan dengan fitur Wish dan RSVP realtime.",
-        tech : ["React", "Tailwind CSS", "Supabase"], 
+        tech : ["Tailwind CSS", "Supabase"], 
         link : "https://grahasta.my.id/"
+    },
+    {
+        id: 5,
+        image: Project2,
+        title: "Balinese Culture Website",
+        desc : "A digital archive platform dedicated to preserving and showcasing Balinese cultural heritage.",
+        tech : ["Laravel", "Ontologi", "Mysql"], 
+        link : "https://github.com/dayuani/Ceraken-Website"
+    },
+    {
+        id: 6,
+        image: Project2,
+        title: "Birthday Invitation",
+        desc : "Website undangan digital elegan dengan fitur Wish dan RSVP realtime.",
+        tech : ["Tailwind CSS", "Supabase"], 
+        link : ""
     }
+
 ]
 export const achievements = [
  {
@@ -71,7 +88,7 @@ export const achievements = [
     title: "Juara 3 - Automatic Watering System",
     rank: "Juara 3",
     institution: "Universitas Paramadina Jakarta",
-    desc: "Sistem penyiraman otomatis berbasis IOT untuk menentukan kesuburan tanah",
+    desc: "Engineered an IoT-based automated irrigation system that optimizes soil fertility through real-time sensor data monitoring.",
     icon: "bi bi-trophy-fill",
     images: [
       { url: SertifLomba1, alt: "Sertifikat Lomba IOT"},
@@ -86,7 +103,7 @@ export const achievements = [
     title: "Generation Girl Goed to High School",
     rank: "Mentor",
     institution: "Generation Girl Bali",
-    desc: "Pelatihan pembuatan website portofolio bagi siswa-siswi SMAN 1 Mengwi",
+    desc: "Served as an instructor in a web development workshop, empowering students at SMAN 1 Mengwi to build their own digital portfolios.",
     icon: "bi bi-cpu-fill",
     images: [
       { url: Mentoring, alt: "SMA 1 MENGWI"}
@@ -99,7 +116,7 @@ export const achievements = [
     title: "Abdidaya Ormawa",
     rank: "Tim Web",
     institution: "Universitas Udayana",
-    desc: "Membuat website yang digunakan sebagai sumber informasi untuk acara abdidaya ormawa di universitas udayana",
+    desc: "A web-based information system designed for the publication and event management of Abdidaya Ormawa at Udayana University.",
     icon: "bi bi-cpu-fill",
     images: [
       { url: Abdidaya, alt: "Abdidaya"}
@@ -112,7 +129,7 @@ export const achievements = [
     title: "Science data",
     rank: "Internship",
     institution: "Vinix7",
-    desc: "Analisis data terkait IUP (International Undergraduate Program) di perguruan tinggi",
+    desc: "Deepening expertise in data science using Python and applying data analysis techniques to IUP case studies.",
     icon: "bi bi-briefcase-fill",
     images: [ 
        { url: SertifMagang, alt: "Sertif Magang"}
@@ -122,7 +139,7 @@ export const achievements = [
 export const skillCategories = [
   {
     id: 1,
-    title: "Skills",
+    title: "Language",
     items: [
       { name: "CSS3", bg: "#007acc", icon: "bi bi-filetype-css" },
       { name: "HTML5", bg: "#e34f26", icon: "bi bi-filetype-html" },

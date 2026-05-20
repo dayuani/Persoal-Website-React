@@ -18,33 +18,25 @@ const FooterComponents = () => {
               Dayuani<span className="text-accent">.</span>
             </div>
             <p className="footer-about-text">
-              Terima kasih telah berkunjung. Mari terhubung dan bangun sesuatu yang luar biasa bersama-sama!
+              Thank you for visiting. Let’s connect and build something amazing together!
             </p>
-          </Col>
-
-          {/* Kolom 2: Navigasi Cepat */}
-          <Col lg={4} md={6} className="footer-links">
-            <h5 className="footer-title">Tautan Pintas</h5>
-            <ul className="list-unstyled p-0 m-0">
-              <li><Link to="/"><i className="bi bi-chevron-right me-2 font-xs"></i>Home</Link></li>
-              <li><Link to="/projects"><i className="bi bi-chevron-right me-2 font-xs"></i>Project</Link></li>
-              <li><Link to="/about"><i className="bi bi-chevron-right me-2 font-xs"></i>Tentang Saya</Link></li>
-              <li><Link to="/contact"><i className="bi bi-chevron-right me-2 font-xs"></i>Kontak</Link></li>
-            </ul>
           </Col>
 
           {/* Kolom 3: Media Sosial */}
           <Col lg={3} md={6} className="footer-social">
-            <h5 className="footer-title">Ikuti Saya</h5>
+            <h5 className="footer-title">Follow Me</h5>
             <div className="social-icons d-flex gap-3">
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-icon-link">
-                <i className="bi bi-linkedin"></i>
-              </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="social-icon-link">
+              <a href="https://github.com/dayuani" target="_blank" rel="noreferrer" className="social-link-item" title="GitHub">
                 <i className="bi bi-github"></i>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon-link">
+              <a href="https://www.instagram.com/dayusantiani._" target="_blank" rel="noreferrer" className="social-link-item" title="Instagram">
                 <i className="bi bi-instagram"></i>
+              </a>
+              {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link-item" title="LinkedIn">
+                <i className="bi bi-linkedin"></i>
+              </a> */}
+              <a href="mailto:dy.santiani@gmail.com" className="social-link-item" title="Email" target="_blank" rel="noreferrer">
+                <i className="bi bi-envelope-fill"></i>
               </a>
             </div>
           </Col>
@@ -55,7 +47,7 @@ const FooterComponents = () => {
         <Row className="copyright-bar text-center mt-5">
           <Col>
             <p className="copyright-text m-0">
-              &copy; {new Date().getFullYear()} Dayuani Putri. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Dayuani. All Rights Reserved.
             </p>
           </Col>
         </Row>

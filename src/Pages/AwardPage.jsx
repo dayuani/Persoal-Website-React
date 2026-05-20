@@ -18,7 +18,7 @@ const AwardPage = () => {
         <div className="awards-header text-center mb-4">
           <h2 className="section-title">My <span className="text-accent">Journey</span></h2>
           <p className="section-subtitle">
-            Eksplorasi, kontribusi, dan rekam jejak profesional yang saya bangun di industri dan akademis.
+            "An overview of my exploration, contributions, and professional track record established within both industry and academia."
           </p>
         </div>
 
