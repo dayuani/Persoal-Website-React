@@ -13,7 +13,7 @@ import SertifLomba2 from "../assets/img/lomba/Sertif-Invention.jpg"
 import SertifMagang from "../assets/img/magang/magang.jpeg"
 
 // Activity Mentoring
-import Mentoring from "../assets/img/activity/Mentoring.png"
+import Mentoring from "../assets/img/activity/mentoring.png"
 import Abdidaya from "../assets/img/activity/Abdidaya.jpeg"
 
 export const navLinks = [
