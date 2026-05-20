@@ -1,0 +1,1040 @@
+/* ==========================================
+   1. DEFINISI ROOT WARNA (Palet Portofolio)
+   ========================================== */
+:root {
+  --bg-dark-primary: #121212;   /* Hitam pekat utama */
+  --bg-dark-secondary: #1a1a1a; /* Hitam sedikit abu untuk navbar/card */
+  --color-primary: #00adb5;     /* Warna utama/aksen (contoh: Toska/Cyan modern) */
+  --color-secondary: #393e46;   /* Warna sekunder abu-abu gelap */
+  --text-main: #eeeeee;         /* Warna teks utama (putih pudar nyaman di mata) */
+  --text-muted: #b3b3b3;        /* Warna teks redup/link biasa */
+}
+
+/* ==========================================
+   2. STYLING CUSTOM NAVBAR (DOMINAN HITAM)
+   ========================================== */
+.custom-navbar {
+  background-color: rgba(26, 26, 26, 0.85) !important; /* Latar belakang hitam transparan modern */
+  backdrop-filter: blur(12px); /* Efek blur kaca di belakang navbar */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 15px 0;
+  z-index: 1050;
+  transition: all 0.3s ease;
+}
+
+/* --- Logo Brand "Dayuani" --- */
+.custom-navbar .navbar-brand {
+  font-family: 'Poppins', sans-serif; /* Pastikan font kustom terpasang jika ingin sama persis */
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: var(--text-main) !important;
+}
+
+/* --- Desain Item Nav Link (Kanan) --- */
+.custom-navbar .nav-link {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted) !important; /* Warna dasar abu-abu redup */
+  font-weight: bold;
+  font-size: 1.05rem; /* Ukuran teks ideal */
+  padding: 6px 0 !important; /* Padding atas bawah untuk area hover */
+  margin: 0 18px; /* Jarak antar menu horizontal agar lebih berjarak dan lega */
+  position: relative; /* Diperlukan untuk animasi garis bawah */
+  transition: color 0.3s ease;
+}
+
+/* Garis bawah dekoratif (Underline Effect) */
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Mulai dari lebar kosong */
+  height: 2px;
+  background-color: var(--color-primary); /* Menggunakan warna toska kustom */
+  box-shadow: 0 0 10px rgba(0, 173, 181, 0.8); /* Efek neon/glow lembut di bawah text */
+  transition: width 0.3s ease;
+}
+
+/* --- Efek Hover saat Kursor Menyentuh Menu --- */
+.custom-navbar .nav-link:hover {
+  color: var(--text-main) !important; /* Teks menjadi terang saat di-hover */
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%; /* Garis memanjang penuh dari kiri ke kanan */
+}
+
+/* --- Menu yang Sedang Aktif (Active Route) --- */
+.custom-navbar .nav-link.active-custom {
+  color: var(--color-primary) !important; /* Teks menetap di warna toska utama */
+  font-weight: 600;
+}
+
+.custom-navbar .nav-link.active-custom::after {
+  width: 100%; /* Garis bawah menetap penuh menandakan posisi halaman */
+}
+
+/* --- RESPONSIVE STYLE (Penyesuaian Tampilan HP) --- */
+@media (max-width: 991.98px) {
+  .custom-navbar .nav-link {
+    margin: 12px 0; /* Mengubah jarak horizontal menjadi vertikal saat menu menumpuk di HP */
+    display: inline-block; /* Membatasi area garis bawah agar tidak melebar se-layar penuh */
+  }
+}
+
+/* ==========================================
+   3. STYLING CUSTOM BUTTON (Connect With Me)
+   ========================================== */
+.btn-custom-connect {
+  background-color: transparent !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
+  font-weight: 400;
+  border-radius:999px;
+  padding: 8px;
+  font-size: 10px;
+  transition: all 0.3s ease !important;
+}
+
+/* Efek Hover Tombol */
+.btn-custom-connect:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--bg-dark-primary) !important; /* Teks berubah gelap saat background menyala */
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.4); /* Efek glow/menyala */
+}
+
+/* HOME */
+/* ==========================================
+   STYLING HOME SECTION (TEMA GELAP / HITAM)
+   ========================================== */
+
+.home-section {
+  background-color: #0d0d0d !important; /* Hitam pekat OLED matte */
+  padding: 140px 0 60px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- Elemen Dekorasi Latar Belakang (Ambient Lighting) --- */
+.bg-glow-dekorasi {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.15) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none; /* Supaya tidak mengganggu klik mouse */
+}
+.bg-glow-dekorasi.top-left {
+  top: -10%;
+  left: -10%;
+}
+.bg-glow-dekorasi.bottom-right {
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Layer Helper */
+.z-2 { z-index: 2; }
+.min-vh-80 { min-height: 75vh; }
+
+/* --- Badge Halo / Selamat Datang --- */
+.badge-welcome {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 173, 181, 0.08);
+  border: 1px solid rgba(0, 173, 181, 0.2);
+  color: var(--color-primary); /* Toska */
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.badge-welcome .dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* --- Nama Utama (Headline) --- */
+.hero-name {
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: -1.5px;
+}
+.hero-name .text-accent {
+  color: var(--color-primary);
+  background: linear-gradient(45deg, #00adb5, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Baris Judul Pekerjaan (Job Title) --- */
+.job-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+@media (max-width: 991.98px) {
+  .job-title-wrapper { justify-content: center; }
+}
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+.job-title-sub {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #888888;
+  margin: 0;
+}
+.job-title-wrapper .separator {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1.4rem;
+}
+
+/* --- Paragraf Deskripsi --- */
+.hero-description {
+  font-family: 'Poppins', sans-serif; /* Mengubah font menjadi Poppins */
+  color: #b3b3b3;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  
+  /* 2. Mengatur Lebar Maksimal & Rata Kanan-Kiri */
+  text-align: justify; /* Membuat susunan huruf rata kanan-kiri agar rapi */
+  
+  /* 3. Membuat Blok Teks Berada di Tengah Halaman */
+  margin: 0 auto 35px auto;
+}
+
+/* --- Tombol Premium Modern --- */
+.btn-lg-premium {
+  padding: 12px 28px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+}
+
+.home-intro .btn-custom-connect {
+  background-color: var(--color-primary) !important;
+  color: #0d0d0d !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.home-intro .btn-custom-connect:hover {
+  background-color: #00c2cb !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 173, 181, 0.5);
+}
+.home-intro .btn-custom-connect i {
+  transition: transform 0.2s ease;
+}
+.home-intro .btn-custom-connect:hover i {
+  transform: translateX(4px);
+}
+
+.home-intro .btn-outline-custom {
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.home-intro .btn-outline-custom:hover {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-3px);
+}
+
+/* --- Komponen Kotak Foto Profil Beserta Efek Bayangannya --- */
+.profile-img-box {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+/* Mengubah bingkai luar dekoratif agar sejajar melengkung mengikuti kotak */
+.profile-img-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 102%;
+  height: 102%;
+  background: linear-gradient(135deg, var(--color-primary), transparent 60%);
+  border-radius: 20px; /* Diubah melengkung kotak tumpul */
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 370px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px; /* Sudut kotak rounded */
+  border: 2px solid rgba(255, 255, 255, 0.08); /* Garif tepi tipis cyber */
+  background-color: #1a1a1a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Interaksi Efek Hover pada Foto Kotak */
+.profile-img-box:hover .profile-img {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(0, 173, 181, 0.4);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 173, 181, 0.2);
+}
+.profile-img-box:hover::before {
+  opacity: 0.7;
+  filter: blur(12px);
+  transform: translate(-50%, -46%) scale(1.03); /* Bayangan gradasi ikut bergeser turun menciptakan kedalaman 3D */
+}
+
+/* --- Styling Ikon Sosial Media Hero Section --- */
+.hero-socials {
+  animation: fadeInUp 1s ease block; /* Animasi smooth saat page di-load */
+}
+
+.social-link-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #b3b3b3; /* Warna default abu-abu redup */
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efek Hover Lingkaran Ikon */
+.social-link-item:hover {
+  color: var(--color-primary) !important; /* Berganti warna toska utama */
+  background-color: rgba(0, 173, 181, 0.05);
+  border-color: rgba(0, 173, 181, 0.3);
+  transform: translateY(-4px); /* Ikon melompat sedikit ke atas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 173, 181, 0.15);
+}
+
+/* Animasi keyframe pelengkap untuk keindahan transisi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 991.98px) {
+  .home-section {
+    padding: 120px 0 60px 0;
+  }
+  .hero-name {
+    font-size: 3.2rem;
+  }
+  .job-title, .job-title-sub {
+    font-size: 1.25rem;
+  }
+  .profile-img {
+    max-width: 300px;
+    margin-top: 30px;
+  }
+}
+
+/* ==========================================
+   STYLING HOME SKILLS SECTION
+   ========================================== */
+
+.home-skills-section {
+  background-color: #0d0d0d !important; /* Latar belakang hitam pekat agar senada */
+  color: #ffffff;
+}
+
+/* Tipografi Header */
+.skills-header .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.skills-header .text-accent {
+  background: linear-gradient(45deg, #00adb5, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-header .section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 10px auto 0 auto;
+}
+
+/* Judul Kelompok Kategori (Skills, Framework, dll) */
+.skill-group-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e6e6e6;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #00adb5;
+  padding-left: 10px;
+}
+
+/* --- Desain Kapsul Lencana Tech (Gaya Flat Solid) --- */
+.custom-tech-badge {
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px; /* Sesuai dengan bentuk kotak di referensi gambar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: default;
+}
+
+/* Efek interaktif saat kursor menyentuh lencana skill */
+.custom-tech-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.15); /* Membuat warnanya sedikit lebih menyala cerah */
+}
+
+.custom-tech-badge i {
+  font-size: 1.05rem;
+}
+
+.custom-tech-badge .skill-name {
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   STYLING CONTACT ME SECTION (PREMIUM DARK)
+   ========================================== */
+
+.contact-section {
+  background-color: #0d0d0d !important; /* Senada dengan background utama */
+  padding: 100px 0 100px 0;
+  overflow: hidden;
+}
+
+/* Lampu hias latar belakang */
+.contact-section .contact-glow {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.08) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- Header Grid --- */
+.contact-header .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.contact-header .text-accent {
+  background: linear-gradient(45deg, #00adb5, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-header .section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #b3b3b3;
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Glassmorphic Form Card --- */
+.contact-card-wrapper {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 45px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 767.98px) {
+  .contact-card-wrapper {
+    padding: 25px; /* Padding sedikit mengecil di layar HP */
+  }
+}
+
+/* --- Label Form --- */
+.custom-label {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+/* --- Input Fields (Desain Baru Kotak Elegan) --- */
+.custom-input {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  font-size: 0.98rem;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Placeholder warna abu-abu elegan */
+.custom-input::placeholder {
+  color: #555555 !important;
+}
+
+/* Efek Menyala Ketika Form Diklik (Focus Mode) */
+.custom-input:focus {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(0, 173, 181, 0.5) !important; /* Mengubah warna pinggiran menjadi toska */
+  box-shadow: 0 0 12px rgba(0, 173, 181, 0.2) !important; /* Glow neon tipis */
+  outline: none;
+}
+
+/* Khusus Textarea */
+textarea.custom-input {
+  resize: none; /* Mematikan resize manual agar tidak merusak layout */
+}
+
+/* ==========================================
+   STYLING PROJECT SECTION (DARK PREMIUM)
+   ========================================== */
+
+.project-section {
+  background-color: #0d0d0d !important; /* Disamakan dengan background hitam pekat OLED */
+  color: var(--text-main);
+  /* SOLUSI TABRAKAN NAVBAR: Ditambahkan padding atas 140px agar konten turun di bawah navbar fixed */
+  padding: 140px 0 8px 0; 
+  min-height: 100vh;
+  padding-bottom: 115px;
+ 
+}
+
+/* Header Text */
+.project-header .section-title {
+  font-family: 'Poppins', sans-serif; /* Mengubah font menjadi Poppins */
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.project-header .text-accent {
+  background: linear-gradient(45deg, #00adb5, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-header p {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 10px auto 0 auto;
+  line-height: 1.6;
+}
+
+/* Base Custom Card (Gaya Glassmorphism Minimalis) */
+.custom-project-card {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.02) !important; /* Efek mika transparan tipis */
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px !important; /* Diperhalus sudut kelengkungannya */
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Efek Hover di Seluruh Area Card */
+.custom-project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 173, 181, 0.3) !important; /* Border menyala toska tipis */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 173, 181, 0.1);
+}
+
+/* Container Gambar Card */
+.custom-project-card .img-wrapper {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.custom-project-card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-project-card:hover .img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Elemen teks di dalam Card Body */
+.project-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.project-card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #b3b3b3;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify; /* Rata kanan kiri agar serasi dengan deskripsi hero */
+}
+
+/* Perbaikan Badge Koleksi Teknologi Looping */
+.project-card-tech .tech-badge {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-primary); /* Toska */
+  background-color: rgba(0, 173, 181, 0.08); /* Transparan glow */
+  border: 1px solid rgba(0, 173, 181, 0.15);
+  padding: 4px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.custom-project-card:hover .tech-badge {
+  border-color: rgba(0, 173, 181, 0.4);
+  background-color: rgba(0, 173, 181, 0.12);
+}
+
+/* Link Tautan Project */
+.project-card-link {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  width: fit-content;
+}
+
+.project-card-link:hover {
+  color: var(--color-primary) !important; /* Berubah menjadi warna toska utama */
+}
+
+.project-card-link i {
+  transition: transform 0.2s ease;
+}
+
+.project-card-link:hover i {
+  transform: translateX(5px); /* Animasi panah terdorong ke kanan */
+}
+
+/* ==========================================
+   STYLING AWARDS & COMPETITIONS (PREMIUM)
+   ========================================== */
+
+.awards-section {
+  background-color: #0d0d0d !important; /* Senada dengan tema gelap OLED */
+  padding: 140px 0 100px 0; /* Aman dari tabrakan fixed navbar */
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Penataan Lampu Latar Belakang */
+.awards-section .award-glow-1 {
+  position: absolute;
+  top: 15%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.12) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(60px);
+  z-index: 1;
+}
+.awards-section .award-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(50px);
+  z-index: 1;
+}
+
+/* Header Text */
+.awards-header .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+.awards-header .text-accent {
+  background: linear-gradient(45deg, #00adb5, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.awards-header .section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #b3b3b3;
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Struktur Komponen Linimasa (Timeline) --- */
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid rgba(255, 255, 255, 0.05); /* Garis vertikal linimasa */
+  margin-top: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Lingkaran Titik Tahun di Garis Vertikal */
+.timeline-badge-year {
+  position: absolute;
+  left: -53px; /* Memosisikan pas di atas garis kiri */
+  top: 20px;
+  background-color: #0d0d0d;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 173, 181, 0.3);
+  color: var(--color-primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+/* --- Desain Kartu Penghargaan (Award Card) --- */
+.award-card {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Efek Hover Mengikuti Skema Portofolio Anda */
+.award-card:hover {
+  transform: translateX(8px); /* Sedikit bergeser ke kanan, bukan ke atas, khas efek timeline */
+  border-color: rgba(0, 173, 181, 0.3) !important;
+  background-color: rgba(0, 173, 181, 0.02) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 173, 181, 0.1);
+}
+
+/* Kotak Pembungkus Ikon Piala */
+.award-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 173, 181, 0.08);
+  border: 1px solid rgba(0, 173, 181, 0.15);
+  border-radius: 12px;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+.award-card:hover .award-icon-box {
+  background-color: var(--color-primary);
+  color: #0d0d0d;
+  box-shadow: 0 0 12px var(--color-primary);
+}
+
+/* Tipografi di dalam Card */
+.award-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.award-institution {
+  font-size: 0.9rem;
+  color: #888888;
+  display: block;
+}
+.award-card-desc {
+  font-size: 0.95rem;
+  color: #b3b3b3;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Badge Peringkat Juara / Partisipan */
+.rank-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00adb5 0%, #007a80 100%);
+  padding: 6px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+  width: fit-content;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 10px rgba(0, 173, 181, 0.2);
+}
+/* --- Styling Nav Pills Kustom untuk Filter Kategori --- */
+.custom-nav-pills {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 6px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.custom-nav-pills .nav-link {
+  font-family: 'Poppins', sans-serif;
+  color: #b3b3b3 !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 25px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keadaan Tombol Tab Ketika Aktif */
+.custom-nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #00adb5 0%, #007a80 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+  font-weight: 600;
+}
+
+/* Efek Hover Ringan pada Tombol yang Tidak Aktif */
+.custom-nav-pills .nav-link:not(.active):hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Animasi Fade-In Halus Saat Mengganti Kategori Tab */
+.animate-fade-in {
+  animation: fadeInTab 0.5s ease forwards;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tampilan Empty State */
+.card-empty-state {
+  font-family: 'Poppins', sans-serif;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 767.98px) {
+  .timeline-container {
+    padding-left: 20px;
+  }
+  .timeline-badge-year {
+    left: -43px;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+  .award-card-title {
+    font-size: 1.1rem;
+  }
+  .awards-header .section-title {
+    font-size: 2.2rem;
+  }
+}
+/* ==========================================
+   STYLING CUSTOM FOOTER PREMUM (DARK DESIGN)
+   ========================================== */
+
+.custom-footer {
+  background-color: #0d0d0d !important; /* Hitam OLED pekat konsisten dengan Skills & Experience */
+  padding: 80px 0 30px 0;
+  color: #ffffff;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Pembatas Garis Atas Menyala Halus */
+.footer-top-glow {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 173, 181, 0.3), transparent);
+}
+
+/* Identitas Brand */
+.footer-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.footer-brand .text-accent {
+  color: #00adb5;
+  text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+}
+
+.footer-about-text {
+  font-family: 'Poppins', sans-serif;
+  color: #a6a6a6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+/* Judul Kolom (Tautan Pintas & Ikuti Saya) */
+.footer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Link Menu Navigasi */
+.footer-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+  font-family: 'Poppins', sans-serif;
+  color: #a6a6a6 !important;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Efek Hover Menu Tautan Bergeser Pasif & Berganti Warna */
+.footer-links ul li a:hover {
+  color: #00adb5 !important;
+  transform: translateX(4px);
+}
+
+.font-xs {
+  font-size: 0.75rem;
+  color: rgba(0, 173, 181, 0.5);
+}
+
+/* Tombol Ikon Media Sosial Bulat Berpendar */
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: #a6a6a6 !important;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+/* Efek Hover Sosial Media */
+.social-icon-link:hover {
+  background-color: rgba(0, 173, 181, 0.1);
+  border-color: #00adb5;
+  color: #00adb5 !important;
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 173, 181, 0.2);
+}
+
+/* Bagian Hak Cipta Bawah */
+.copyright-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 25px;
+}
+
+.copyright-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #666666;
+  letter-spacing: 0.3px;
+}
